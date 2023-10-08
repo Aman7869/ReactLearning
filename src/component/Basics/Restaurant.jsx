@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import "./style.css";
+// import "./style.css";
 import Menu from "./menuApi.js";
 import MenuCard from "./MenuCard";
 import Navbar from "./Navbar";
-import IncrDecr from "../IncrDecr/IncrDecr";
+import { RestaurantStyle } from "./style";
 
 const uniqueList = [
   ...new Set(
@@ -35,10 +35,10 @@ const Resturant = () => {
 
   return (
     <>
-      <Navbar filterItem={filterItem} menuList={menuList} />
-      <MenuCard menuData={menuData} />
-
-      <IncrDecr />
+      <RestaurantStyle>
+        <Navbar filterItem={filterItem} menuList={menuList} />
+        <MenuCard menuData={menuData} />
+      </RestaurantStyle>
     </>
   );
 };
